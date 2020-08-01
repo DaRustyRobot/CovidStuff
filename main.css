@@ -21,35 +21,50 @@ body {
   "hero-content"
   "search_container"
   "state"
-  "cards"
+  "cards_section"
   "footer"
   ;
 
-  grid-template-rows: 50px 230px 80px 80px 400px 100px;
+  grid-template-rows: 50px 230px 80px 80px 600px 100px;
 
 }
 
-.header {
+nav {
+  display: flex;
+  justify-content: flex-end;
   background-color: #ccc;
-  position: relative;
-  text-align: right;
+  /* position: relative; */
+  /* text-align: right; */
+  /* align-items: flex-end; */
   margin-bottom: 5px;
   padding-top: 12px;
   padding-right: 20px;
   grid-area: header;
+  /* align-items: flex-end; */
 }
 
-.link a {
+nav .link a {
+  display: flex;
+  /* position: relative; */
   text-decoration: none;
   font-size: 16px;
   color: white;
+  /* align-items: flex-end; */
 }
 
 .hero-content {
   background-color: #ccc;
   margin-bottom: 5px;
   padding: 20px;
+  position: relative;
   grid-area: hero-content;
+}
+
+.hero-content img {
+  width: 300px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .search_container {
@@ -198,13 +213,77 @@ body {
   letter-spacing: 2.5px;
 }
 
-
-
-.cards {
+.cards_section { 
   background-color: #ccc;
   margin-bottom: 5px;
+  /* messing with padding (July 28) */
   padding: 20px;
-  grid-area: cards;
+  grid-area: cards_section;
+}
+
+section {
+  display: grid;
+  grid-template-columns: 1fr repeat(3, minmax(auto, 400px));
+  grid-gap: 20px;
+  /* messing with padding (July 28) */
+  
+  padding: 0px 0;
+}
+
+/* .card_container img {
+  height: 400px;
+} */
+
+.text-medium {
+  font-family: 'Muli', sans-serif;
+  font-size: 24px;
+}
+
+.cards {
+  grid-column: 2 / span 3;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 400px));
+  grid-gap: 20px;
+  
+}
+
+.card {
+  grid-column-end: span 1;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  position: relative;
+  /* animation for card (7/28)*/
+  /* transition: all 0.3s ease 0s; */
+}
+
+.card_container {
+  width: 100%;
+  padding-top: 56.25%;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.card_container img {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+ .card_content {
+  display: flex;
+  background-color: rgb(107, 104, 104);
+  padding-left: 20px;
+  height: 60px;
+  align-items: center;
+} 
+
+.card_content p {
+  display: inline-block;
 }
 
 .footer {
