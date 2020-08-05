@@ -29,7 +29,7 @@ body {
 
 }
 
-nav {
+.nav-wrapper {
   display: flex;
   justify-content: flex-end;
   background-color: #ccc;
@@ -38,18 +38,31 @@ nav {
   /* align-items: flex-end; */
   margin-bottom: 5px;
   padding-top: 12px;
-  padding-right: 20px;
+  padding-right: 40px;
+  
   grid-area: header;
   /* align-items: flex-end; */
 }
 
-nav .link a {
+.nav-link-wrapper a {
   display: flex;
   /* position: relative; */
   text-decoration: none;
   font-size: 16px;
   color: white;
+  
+  border-bottom: 1px solid transparent;
+  transition: color 0.5s;
+  transition: border-bottom 0.5s;
   /* align-items: flex-end; */
+}
+
+.nav-link-wrapper a:hover {
+  border-bottom: 1px solid rgb(243, 103, 103);; 
+}
+
+.nav-link-wrapper a:hover {
+  color: rgb(243, 103, 103);
 }
 
 .hero-content {
